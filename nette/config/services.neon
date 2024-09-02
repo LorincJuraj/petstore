@@ -1,0 +1,10 @@
+services:
+	- App\Core\RouterFactory::createRouter
+	- App\Model\PetManager(%appDir%/../pets.xml)
+	- App\Model\HomeManager
+
+search:
+	-	in: %appDir%
+		classes:
+			- *Factory
+			- *Facade

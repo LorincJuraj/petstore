@@ -1,0 +1,60 @@
+<!-- /app/UI/Home/templates/Home/default.latte -->
+
+{block content}
+
+<h1>Pet Store</h1>
+
+{ifset $isPetAdded}
+    {if $isPetAdded}
+        <p>Pet has been added. <a href="{link this}">Add another pet</a>.</p>
+    {else}
+        <h2>Add a New Pet</h2>
+        {control addPetForm}
+    {/if}
+{/ifset}
+<hr>
+
+<h2>List of Pets</h2>
+
+<a href="{link this, ''}">all</a> |
+<a href="{link this, available}">available</a> |
+<a href="{link this, pending}">pending</a> |
+<a href="{link this, sold}">sold</a><br><br>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Photo URLs</th>
+            <th>Tags</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    {foreach $pets as $pet}
+        <tr>
+            <td>{$pet['id']}</td>
+            <td>{$pet['name']}</td>
+            <td>{$pet['category'][0]['name']}</td>
+            <td>{$pet['status']}</td>
+            <td>{implode(', ', $pet['photoUrls'])}</td>
+            <td>{implode(', ', array_map(fn($tag) => $tag['name'], $pet['tags']))}</td>
+            <td><a href="{link deletePet, $pet['id']}">Delete</a></td>
+            <td><a href="{link editPet, $pet['id']}">Edit</a></td>
+        </tr>
+
+    {/foreach}
+</table>
+
+
+
+
+{if ($pets|length) === 0}
+    <p>No pets found.</p>
+{/if}
+
+{/block}
