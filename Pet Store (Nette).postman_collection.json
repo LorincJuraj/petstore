@@ -1,0 +1,394 @@
+{
+	"info": {
+		"_postman_id": "5f2898a0-4a94-4051-82e9-3f3f87981dcd",
+		"name": "Pet Store (Nette)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6076542"
+	},
+	"item": [
+		{
+			"name": "Add pet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "doggie",
+							"type": "text"
+						},
+						{
+							"key": "category[0].id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "category[0].name",
+							"value": "Dogs",
+							"type": "text"
+						},
+						{
+							"key": "photoUrls[0]",
+							"value": "link1",
+							"type": "text"
+						},
+						{
+							"key": "photoUrls[1]",
+							"value": "link2",
+							"type": "text"
+						},
+						{
+							"key": "photoUrls[2]",
+							"value": "link3",
+							"type": "text"
+						},
+						{
+							"key": "tags[0].id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "tags[0].name",
+							"value": "tag1",
+							"type": "text"
+						},
+						{
+							"key": "tags[1].id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "tags[1].name",
+							"value": "tag2",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "available",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8123/api/pet/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"api",
+						"pet",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all pets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8123/api/pet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"api",
+						"pet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update pet",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "doggie5",
+							"type": "text"
+						},
+						{
+							"key": "category[0].id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "category[0].name",
+							"value": "DogsOrCats",
+							"type": "text"
+						},
+						{
+							"key": "photoUrls[0]",
+							"value": "link1",
+							"type": "text"
+						},
+						{
+							"key": "photoUrls[1]",
+							"value": "link2",
+							"type": "text"
+						},
+						{
+							"key": "photoUrls[2]",
+							"value": "link3.2",
+							"type": "text"
+						},
+						{
+							"key": "photoUrls[3]",
+							"value": "link4",
+							"type": "text"
+						},
+						{
+							"key": "tags[0].id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "tags[0].name",
+							"value": "tag1.2",
+							"type": "text"
+						},
+						{
+							"key": "tags[1].id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "tags[1].name",
+							"value": "tag3",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "sold",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "7",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8123/api/pet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"api",
+						"pet"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "99",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "THis is name",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "cat",
+							"disabled": true
+						},
+						{
+							"key": "image",
+							"value": "img.jpg",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "sold",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete pet",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "doggie4",
+							"type": "text"
+						},
+						{
+							"key": "category[0].id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "category[0].name",
+							"value": "DogsOrCats",
+							"type": "text"
+						},
+						{
+							"key": "photoUrls[0]",
+							"value": "link1",
+							"type": "text"
+						},
+						{
+							"key": "photoUrls[1]",
+							"value": "link2",
+							"type": "text"
+						},
+						{
+							"key": "photoUrls[2]",
+							"value": "link3.2",
+							"type": "text"
+						},
+						{
+							"key": "photoUrls[3]",
+							"value": "link4",
+							"type": "text"
+						},
+						{
+							"key": "tags[0].id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "tags[0].name",
+							"value": "tag1.2",
+							"type": "text"
+						},
+						{
+							"key": "tags[1].id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "tags[1].name",
+							"value": "tag3",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "sold",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "7",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8123/api/pet/44",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"api",
+						"pet",
+						"44"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "99",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "THis is name",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "cat",
+							"disabled": true
+						},
+						{
+							"key": "image",
+							"value": "img.jpg",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "sold",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Pets by status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8123/api/pet/findByStatus?status=sold",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"api",
+						"pet",
+						"findByStatus"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "sold"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get pet by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8123/api/pet/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"api",
+						"pet",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
