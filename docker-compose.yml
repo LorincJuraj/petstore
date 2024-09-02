@@ -16,13 +16,3 @@ services:
       - ./fastcgi-php.conf:/etc/nginx/snippets/fastcgi-php.conf
     depends_on:
       - php-fpm
-
-  db:
-    image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: nette_db
-      MYSQL_USER: nette_user
-      MYSQL_PASSWORD: nette_password
-    ports:
-      - "3306:3306"
